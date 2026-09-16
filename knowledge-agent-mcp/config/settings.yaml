@@ -1,0 +1,44 @@
+knowledge_base_path: "./knowledge_base"
+database_path: "./data/knowledge.db"
+vector_index_path: "./data/vector_index"
+
+read_only: true
+
+server:
+  transport: "stdio"
+  name: "knowledge-agent-mcp"
+  version: "0.2.0"
+
+retrieval:
+  default_top_k: 10
+  max_top_k: 30
+  max_context_tokens: 12000
+  ranking_weights:
+    keyword: 0.30
+    vector: 0.30
+    category: 0.15
+    domain: 0.10
+    version: 0.08
+    status_confidence: 0.05
+    freshness: 0.02
+
+agent:
+  max_search_rounds: 4
+  max_queries_per_round: 6
+  max_results_per_query: 10
+  max_items_to_read: 15
+  max_output_tokens: 5000
+
+llm:
+  api_key: ""
+  base_url: "https://api.opencode.ai/v1"
+  model: "opencode/deepseek-v4-flash-free"
+  temperature: 0.1
+  timeout_seconds: 60
+  max_retries: 2
+
+embedding:
+  provider: "local"
+  model: "tfidf"
+  dimension: 0
+  batch_size: 32

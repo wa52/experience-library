@@ -1,0 +1,5 @@
+type: object
+required: [id, title, category]
+properties:
+  category:
+    const: best_practice

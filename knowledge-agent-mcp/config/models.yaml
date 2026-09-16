@@ -1,0 +1,25 @@
+llm:
+  provider: "opencode"
+  model: "opencode/deepseek-v4-flash-free"
+  temperature: 0.1
+  timeout_seconds: 60
+
+embedding:
+  provider: "local"
+  model: "tfidf"
+  dimension: 0
+  batch_size: 32
+
+agent_models:
+  retrieval_agent:
+    provider: "opencode"
+    model: "opencode/deepseek-v4-flash-free"
+    role: "任务理解与总体检索编排"
+  query_planner:
+    provider: "opencode"
+    model: "opencode/deepseek-v4-flash-free"
+    role: "关键词扩展、过滤条件和查询轮次规划"
+  result_synthesizer:
+    provider: "opencode"
+    model: "opencode/deepseek-v4-flash-free"
+    role: "结果压缩、冲突标注、结构化上下文输出"

@@ -1,0 +1,30 @@
+ranking_weights:
+  keyword: 0.30
+  vector: 0.30
+  category: 0.15
+  domain: 0.10
+  version: 0.08
+  status_confidence: 0.05
+  freshness: 0.02
+
+priority_by_stage:
+  planning:
+    - solution
+    - project_experience
+    - best_practice
+    - risk
+  implementation:
+    - technology
+    - code_example
+    - version_note
+    - solution
+  debugging:
+    - bug
+    - solution
+    - project_experience
+    - technology
+  acceptance:
+    - test_case
+    - best_practice
+    - solution
+    - risk

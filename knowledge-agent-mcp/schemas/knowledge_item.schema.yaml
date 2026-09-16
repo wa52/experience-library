@@ -1,0 +1,26 @@
+type: object
+required:
+  - id
+  - title
+  - category
+properties:
+  id:
+    type: string
+  title:
+    type: string
+  category:
+    type: string
+  domain:
+    type: string
+  tags:
+    type: array
+  technologies:
+    type: array
+  languages:
+    type: array
+  versions:
+    type: object
+  status:
+    type: string
+  confidence:
+    type: number

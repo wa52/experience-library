@@ -1,0 +1,22 @@
+# Local environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local indexes and runtime data
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Tool and editor state
+.serena/
+.opencode/node_modules/
+.opencode/.cache/
