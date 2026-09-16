@@ -8,21 +8,20 @@
 
 ```text
 D:\项目经验库
-├─ 00_索引/                       # 索引 + 检索规则
+├─ 00_索引/                       # 使用规则（非 Agent 必读入口）
 ├─ projects/                      # 项目经验
 ├─ failure_database/              # 失败记录 / Bug
 ├─ patterns/                      # 可复用模式
 ├─ domains/                       # 领域知识
 ├─ knowledge-agent-mcp/           # MCP 项目
 ├─ tools/                         # 经验库工具
-└─ index/                         # 自动生成索引
+└─ archive/                       # 历史内容
 ```
 
-## 核心索引
+## 使用入口
 
-- `项目经验索引.md`：项目经验、失败记录、模式文档的完整入口。
-- `OpenCode检索规则.md`：OpenCode 强制多路径检索规则。
-- `../index/project_index.md`、`../index/bug_index.md`、`../index/pattern_index.md`：自动生成索引。
+- Agent 默认直接检索 `../failure_database/`、`../projects/`、`../patterns/`、`../domains/`。
+- `../index/` 仅供人工浏览，不是 Agent 必读入口。
 
 ## 搜索方式
 
@@ -41,14 +40,14 @@ rg -n "关键词1|关键词2" D:\项目经验库
 
 ## OpenCode 多路径检索策略
 
-### 必查路径
+### 默认检索路径
 
 | 顺序 | 路径 | 用途 |
 |:---:|------|------|
-| 1 | `README.md` | 确认目录和检索规则 |
-| 2 | `项目经验索引.md`、`../index/` | 定位项目、Bug、模式索引 |
-| 3 | `projects/` | 找项目经验 |
-| 4 | `failure_database/`、`patterns/`、`domains/`、`tools/` | 找问题解决、可复用代码、领域总结 |
+| 1 | `../failure_database/` | 找失败案例 |
+| 2 | `../projects/` | 找项目经验 |
+| 3 | `../patterns/` | 找复用模式 |
+| 4 | `../domains/` | 找领域总结 |
 
 ### 快速命令
 

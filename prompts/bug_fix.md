@@ -75,7 +75,7 @@ class Worker(QThread):
 ```
 
 ## 经验库参考
-请查阅 bugs/pyqt_bugs.md 中的 Bug 1
+如需追溯旧记录，请查阅 `archive/legacy-knowledge/bugs/python/pyqt_bugs.md`；默认优先搜索 `failure_database/`。
 
 ## 排查要求
 1. 先分析可能原因，不要直接改代码

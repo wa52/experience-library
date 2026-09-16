@@ -16,8 +16,7 @@ permission:
 
 | 入口 | 用途 |
 |------|------|
-| `README.md`、`00_索引/` | 目录说明、全局规则、检索规则 |
-| `index/` | 自动生成的项目、Bug、模式索引 |
+   | `README.md` | 目录说明和使用方式 |
 | `projects/` | 项目经验、架构、决策、教训、验收 |
 | `failure_database/` | Bug 现象、根因、修复、验证 |
 | `patterns/` | 跨项目复用模式 |
@@ -38,11 +37,11 @@ permission:
 
 ## 读取规则
 
-1. 先读 `README.md`、`00_索引/README.md` 和 `00_索引/OpenCode检索规则.md`。
-2. 再读 `index/project_index.md`、`index/bug_index.md`、`index/pattern_index.md`。
-3. 按问题类型进入 `projects/`、`failure_database/`、`patterns/`、`domains/`。
-4. 需要全文检索时使用 `grep` 或 `python tools/search_experience.py`。
-5. 结论必须给出来源文件路径，不编造不存在的经验。
+1. 先读当前项目的 `.ai/project_rules.md`（如果存在）和 `.ai/experience_link.md`（如果存在）。
+2. 使用 `python tools/search_experience.py` 在 `failure_database/`、`projects/`、`patterns/`、`domains/` 中快速检索。
+3. 默认读取 Top 3-5 条候选；只有明显相关时才展开全文。
+4. 检查技术版本、平台和约束后决定是否复用，历史经验不是强制命令。
+5. 结论必须给出实际采用的来源路径；无可靠命中时说明检索词和范围。
 
 ## 写入规则
 
@@ -63,7 +62,7 @@ python D:\项目经验库\tools\build_index.py
 
 ## 使用结果展示规则
 
-每次开发任务完成后，由主 Agent 在最终回复中展示“经验库使用结果”，并在可获得数据时追加 `reports/usage/knowledge_usage.jsonl`。纯查询类任务不强制记录。
+每次开发任务完成后，由主 Agent 简要展示实际采用的经验；纯查询类任务不强制记录。使用统计不是开发前置门禁。
 
 固定展示格式：
 

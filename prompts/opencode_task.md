@@ -66,7 +66,7 @@ Python 3.11, PyQt5, threading
 ## 需要参考的经验
 请查阅 D:/项目经验库 中的以下内容：
 - patterns/file_matcher_multithread.md 中的生产者-消费者模式
-- bugs/pyqt_bugs.md 中的 QThread UI 更新问题
+- archive/legacy-knowledge/bugs/python/pyqt_bugs.md 中的历史 QThread UI 更新问题（仅追溯时使用）
 
 ## 约束
 - 不要引入第三方搜索库
